@@ -16,9 +16,9 @@ function moduleBootstrap(moduleBinding) {
 			name, namespace, moduleBinding.getBinding);
 	}
 
-	var module = moduleBinding.getBinding("ti.goosh.TiGooshModule")["TiGoosh"];
+	var module = moduleBinding.getBinding("ti.fcm.FcmModule")["Fcm"];
 	var invocationAPIs = module.invocationAPIs = [];
-	module.apiName = "TiGoosh";
+	module.apiName = "Fcm";
 
 	function addInvocationAPI(module, moduleNamespace, namespace, api) {
 		invocationAPIs.push({ namespace: namespace, api: api });

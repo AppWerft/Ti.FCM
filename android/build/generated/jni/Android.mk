@@ -1,11 +1,11 @@
-# Android.mk for ti.goosh
+# Android.mk for ti.fcm
 LOCAL_PATH := $(call my-dir)
 THIS_DIR := $(LOCAL_PATH)
 
 include $(CLEAR_VARS)
 
 THIS_DIR = $(LOCAL_PATH)
-LOCAL_MODULE := ti.goosh
+LOCAL_MODULE := ti.fcm
 LOCAL_CFLAGS := -g "-I$(TI_MOBILE_SDK)/android/native/include"
 
 # https://jira.appcelerator.org/browse/TIMOB-15263

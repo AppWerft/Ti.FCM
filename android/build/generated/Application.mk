@@ -1,4 +1,4 @@
-# Main NDK build script for ti.goosh
+# Main NDK build script for ti.fcm
 
 APP_BUILD_SCRIPT := jni/Android.mk
 TARGET_PLATFORM := android-19

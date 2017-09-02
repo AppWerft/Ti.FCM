@@ -4,13 +4,23 @@
 	<classpathentry kind="src" path="android/build/.apt_generated"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/opt/android-sdk/platforms/android-23/android.jar"/>
-	<classpathentry kind="lib" path="/Library/Application Support/Titanium/mobilesdk/osx/6.1.1.GA/android/titanium.jar"/>
-	<classpathentry kind="lib" path="/Library/Application Support/Titanium/mobilesdk/osx/6.1.1.GA/android/kroll-common.jar"/>
-	<classpathentry kind="lib" path="/Library/Application Support/Titanium/mobilesdk/osx/6.1.1.GA/android/kroll-apt.jar"/>
+	<classpathentry kind="lib" path="/Library/Application Support/Titanium/mobilesdk/osx/6.1.2.GA/android/titanium.jar"/>
+	<classpathentry kind="lib" path="/Library/Application Support/Titanium/mobilesdk/osx/6.1.2.GA/android/kroll-common.jar"/>
+	<classpathentry kind="lib" path="/Library/Application Support/Titanium/mobilesdk/osx/6.1.2.GA/android/kroll-apt.jar"/>
 	<classpathentry kind="src" path=".apt_generated">
 		<attributes>
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/opt/android-sdk/extras/android/support/v4/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/play-services-auth-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/play-services-gcm-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/play-services-iid-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/play-services-base-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/play-services-basement-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/firebase-common-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/firebase-iid-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/play-services-tasks-11.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/gson-2.6.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,16 +1,16 @@
 %define lookup-function-name lookupGeneratedInit
-%define class-name TiGooshBindings
+%define class-name FcmBindings
 %{
 
 #include <string.h>
 #include <v8.h>
 #include <KrollBindings.h>
 
-#include "ti.goosh.TiGooshModule.h"
+#include "ti.fcm.FcmModule.h"
 
 
 %}
 struct titanium::bindings::BindEntry;
 %%
-ti.goosh.TiGooshModule,::ti::goosh::TiGooshModule::bindProxy,::ti::goosh::TiGooshModule::dispose
+ti.fcm.FcmModule,::ti::fcm::FcmModule::bindProxy,::ti::fcm::FcmModule::dispose
 %%
