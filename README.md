@@ -15,7 +15,7 @@ gittio install ti.fcm
 In your tiapp.xml, insert
 
 ```xml
-<property name="gcm.senderid">YOUR_SENDER_ID</property>
+<property name="fcm.senderid">YOUR_SENDER_ID</property>
 ```
 
 To get GCM sender ID:
@@ -36,6 +36,16 @@ In your  `tiapp.xml`, in the node **android > manifest > application**, insert:
 If you have an error at compile time, please first read this article to clarify your idea about this bug: [https://medium.com/all-titanium/deal-with-titanium-modules-and-its-missing-support-for-android-multidex-546de5486d13#.wfo7v4akx](https://medium.com/all-titanium/deal-with-titanium-modules-and-its-missing-support-for-android-multidex-546de5486d13#.wfo7v4akx).
 
 Once done, visit the `gps-jars` directory in this repository.
+
+## Debugging/Development with postman
+
+![](https://www.getpostman.com/)
+
+For testing etc we supose [postman](http://postman.io). With this tool can conveniently the functionality.
+postman needs two files: 
+* environment
+* collection
+Both you can find in this repo, open your eys.
 
 ## Register for Push notifications
 

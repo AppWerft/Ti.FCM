@@ -145,7 +145,7 @@ public class FcmModule extends KrollModule {
 	@Kroll.method
 	public String getSenderId() {
 		return TiApplication.getInstance().getAppProperties()
-				.getString("gcm.senderid", "");
+				.getString("fcm.senderid", "");
 	}
 
 	@Kroll.method

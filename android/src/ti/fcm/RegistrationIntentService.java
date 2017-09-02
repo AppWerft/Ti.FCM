@@ -17,7 +17,7 @@ import org.appcelerator.titanium.util.TiRHelper;
 
 public class RegistrationIntentService extends IntentService {
 
-	private static final String LCAT = "ti.goosh.RegistrationIntentService";
+	private static final String LCAT = "tifcm.RegistrationIntentService";
 
 	public RegistrationIntentService() {
 		super(LCAT);
@@ -30,22 +30,16 @@ public class RegistrationIntentService extends IntentService {
 			Log.e(LCAT, "Intent handled but no Fcm instance module found");
 			return;
 		}
-
 		try {
-
 			String senderId = module.getSenderId();
 			String token = InstanceID.getInstance(this).getToken(senderId, GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
 
 			Log.i(LCAT, "Sender ID: " + senderId);
 			Log.i(LCAT, "Device Token: " + token);
-
 			module.sendSuccess(token);
-
 		} catch (Exception ex) {
-
 			Log.e(LCAT, "Failed to get GCM Registration Token:" + ex.getMessage());
 			module.sendError(ex);
-			
 		}
 	}
 }
