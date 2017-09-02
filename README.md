@@ -1,6 +1,6 @@
 # Ti.FCM
 
-![](https://www.odoo.com/apps/icon_image?module_id=21238)
+<img src="https://www.odoo.com/apps/icon_image?module_id=21238" width=160 />
 
 Axway Titanium module to work easily with Firebase Cloud Messaging (FCM) push notification service... and it's Parse and Parse Server compatible and works with AWS. It follows these [instructions](https://developers.google.com/cloud-messaging/android/client). It is a fork of ti.goosh
 
@@ -41,7 +41,7 @@ Once done, visit the `gps-jars` directory in this repository.
 
 ## Debugging/Development with postman
 
-![](https://www.getpostman.com/)
+![](https://www.getpostman.com/img/v2/logo.svg)
 
 For testing etc we supose [postman](http://postman.io). With this tool can conveniently the functionality.
 postman needs two files: 
@@ -112,19 +112,19 @@ gcm.setAppBadge(2);
 Cancel all notifications
 
 ```
-TiGoosh.cancelAll();
+FCM.cancelAll();
 ```
 
 Cancel notification By id
 
 ```
-TiGoosh.cancel(int id);
+FCM.cancel(int id);
 ```
 
 Cancel notification with tag and id
 
 ```
-TiGoosh.cancelWithTag(String tag, int id);
+FCM.cancelWithTag(String tag, int id);
 ```
 
 ## Set the icon for the tray

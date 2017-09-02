@@ -1,0 +1,43 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FCM",
+		"_postman_id": "15e2f33f-a963-2746-1777-a4067bb498b4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [{
+		"name": "Simple push raw",
+		"request": {
+			"url": "{{URL}}",
+			"method": "POST",
+			"header": [],
+			"body": {
+				"mode": "raw",
+				"raw": "{\"to\": \"12345678901234567890\",\"collapse_key\": \"score_update\",\"time_to_live\": 108,\"delay_while_idle\": true,\"data\": {\"score\": \"4x8\",\"time\": \"15:16.2342\""
+			},
+			"description": ""
+		}
+	}, {
+		"name": "Simple push json",
+		"request": {
+			"url": "{{URL}}",
+			"method": "POST",
+			"header": [],
+			"body": {
+				"mode": "json",
+				"json": {
+					"to": "12345678901234567890",
+					"collapse_key": "score_update",
+					"time_to_live": 108,
+					"delay_while_idle": true,
+					"data": {
+						"score": "4x8",
+						"time": "15:16.2342"
+					},
+					"description": "Simple push for demonstrating"
+				}
+			}
+		}
+	}]
+}

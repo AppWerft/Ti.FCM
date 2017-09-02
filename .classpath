@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/firebase-iid-11.0.2.jar"/>
 	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/play-services-tasks-11.0.2.jar"/>
 	<classpathentry kind="lib" path="/Users/fuerst/Documents/MLearning/ti.fcm/android/lib/gson-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/opt/android-sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.3.0/appcompat-v7-23.3.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
