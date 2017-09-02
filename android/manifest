@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 3
+architectures: armeabi-v7a x86
+description: fcm
+author: Rainer Knöterich
+license: Specify your license
+copyright: Copyright (c) 2017 by 
+
+# these should not be edited
+name: fcm
+moduleid: ti.fcm
+guid: e1b98b94-a29d-4016-801e-8b2589a2813d
+platform: android
+minsdk: 6.1.1.GA
