@@ -1,13 +1,13 @@
-<img src="logo.jpg" />
+# Ti.FCM
 
-#### Android Titanium module to work easily with Google Cloud Messaging push notification service... and it's Parse and Parse Server compatible!
+Axway Titanium module to work easily with Firebase Cloud Messaging (FCM) push notification service... and it's Parse and Parse Server compatible and works with AWS. It follows these [instructions](https://developers.google.com/cloud-messaging/android/client). It is a fork of ti.goosh
 
 ## Install the module
 
 Unzip the latest release in your module directory and add to tiapp modules, or just type:
 
 ```
-gittio install ti.goosh
+gittio install ti.fcm
 ```
 
 ## Set the sender ID
@@ -47,8 +47,8 @@ The behaviour is the same of iOS:
 * if the app is in **foreground**, nothing is shown and you have to handle manually in the app (you can anyway override this behaviour).
 
 ```js
-var TiGoosh = require('ti.goosh');
-TiGoosh.registerForPushNotifications({
+var FCM = require('ti.fcm');
+FCM.registerForPushNotifications({
 
 
 	// The callback to invoke when a notification arrives.
@@ -76,18 +76,9 @@ TiGoosh.registerForPushNotifications({
 ## Unregister
 
 ```js
-TiGoosh.unregisterForPushNotifications();
+FCM.unregisterForPushNotifications();
 ```
 
-## Usage with Trimethyl
-
-[Trimethyl](http://trimethyl.github.io/trimethyl/) uses this module for its *Notifications* library. [http://trimethyl.github.io/trimethyl/notifications.js.html#line155](http://trimethyl.github.io/trimethyl/notifications.js.html#line155), so you can just type:
-
-```js
-Notifications.subscribe();
-```
-
-to activate the notifications for both iOS / Android.
 
 ## Properties
 
