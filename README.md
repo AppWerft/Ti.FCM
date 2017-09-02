@@ -1,6 +1,6 @@
 # Ti.FCM
 
-<img src="https://www.odoo.com/apps/icon_image?module_id=21238" width=160 />
+<img src="https://www.odoo.com/apps/icon_image?module_id=21238" width="160" />
 
 Axway Titanium module to work easily with Firebase Cloud Messaging (FCM) push notification service... and it's Parse and Parse Server compatible and works with AWS. It follows these [instructions](https://developers.google.com/cloud-messaging/android/client). It is a fork of ti.goosh
 
