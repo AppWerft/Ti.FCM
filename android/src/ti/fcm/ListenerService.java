@@ -27,30 +27,29 @@ import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
-public class MyGcmListenerService extends GcmListenerService {
+public class ListenerService extends GcmListenerService {
 	private static final String LCAT = "tigoosh.IntentService";
 	private static final AtomicInteger atomic = new AtomicInteger(0);
 	private FcmModule module = FcmModule.getModule();
 
 	@Override
-	public void onMessageReceived(String from, Bundle bundle) {
-		Log.d(LCAT, "Push notification received from ~~~~~~~~~~: " + from);
-		for (String key : bundle.keySet()) {
-			Object value = bundle.get(key);
-			Log.d(LCAT,
+	public void onMessageReceived(String from, Bundle data) {
+		for (String key : data.keySet()) {
+			Object value = data.get(key);
+			FcmModule.log(
 					String.format("key: %s => Value: %s (%s)", key,
 							value.toString(), value.getClass().getName()));
 		}
-
+		 String messageStr = data.getString("message");
 		JSONObject message;
 		try {
 			// AWS:
-			if (bundle.containsKey("default")) {
-				message = (new JSONObject(bundle.getString("default")));
-				Log.d(LCAT, message.toString());
+			if (data.containsKey("default")) {
+				message = (new JSONObject(data.getString("default")));
+				FcmModule.log( message.toString());
 				GCMQueue db = new GCMQueue();
-				db.insertMessage(bundle.getString("google.message_id"),
-						bundle.getLong("google.sent_time"), message);
+				db.insertMessage(data.getString("google.message_id"),
+						data.getLong("google.sent_time"), message);
 				parseNotification(message);
 
 			} else {
@@ -71,7 +70,7 @@ public class MyGcmListenerService extends GcmListenerService {
 			try {
 				icon = TiRHelper.getApplicationResource(type + "." + name);
 			} catch (TiRHelper.ResourceNotFoundException ex) {
-				Log.e(LCAT, type + "." + name
+				FcmModule.log( type + "." + name
 						+ " not found; make sure it's in platform/android/res/"
 						+ type);
 			}
@@ -92,8 +91,8 @@ public class MyGcmListenerService extends GcmListenerService {
 
 	private void showNotification(Context ctx, JSONObject message) {
 		FcmModule module = FcmModule.getModule();
-		Log.d(LCAT, "Content of gcm.defaults.json\n===========================");
-		// Log.d(LCAT, module.gcmParameters.toString());
+		FcmModule.log( "Content of gcm.defaults.json\n===========================");
+		// FcmModule.log(LCAT, module.gcmParameters.toString());
 		String title = "";// module.gcmParameters.getTitle();
 		String alert = "";// module.gcmParameters.getAlert();
 		try {
@@ -158,7 +157,7 @@ public class MyGcmListenerService extends GcmListenerService {
 				if (smallIcon > 0) {
 					builder.setSmallIcon(smallIcon);
 				} else {
-					Log.d(LCAT, "no icon found");
+					FcmModule.log( "no icon found");
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -297,7 +296,7 @@ public class MyGcmListenerService extends GcmListenerService {
 		Context ctx = TiApplication.getInstance().getApplicationContext();
 		Boolean isAppInBackground = !testIfActivityIsTopInList()
 				.getIsForeground();
-		Log.d(LCAT, "~~~~~~~~ background=" + isAppInBackground);
+		FcmModule.log( "~~~~~~~~ background=" + isAppInBackground);
 		// Flag that determine if the message should be broadcasted to
 		// TiGooshModule and call the callback
 		Boolean sendMessage = !isAppInBackground;
@@ -308,7 +307,7 @@ public class MyGcmListenerService extends GcmListenerService {
 
 		// here wer have title, alert and data
 		if (!isAppInBackground) {
-			Log.d(LCAT,
+			FcmModule.log(
 					"!isAppInBackground  => depending on force_show_in_foreground: ");
 			if (message != null && message.has("force_show_in_foreground")) {
 				Boolean forceShowInForeground = false;
@@ -326,12 +325,12 @@ public class MyGcmListenerService extends GcmListenerService {
 		}
 
 		if (sendMessage && module != null) {
-			Log.d(LCAT, " IntentServioce tries to sendback to JS via module");
+			FcmModule.log( " IntentServioce tries to sendback to JS via module");
 			module.sendMessage(message.toString(), isAppInBackground);
 		}
 
 		if (showNotification) {
-			Log.d(LCAT, "showNotification will call");
+			FcmModule.log( "showNotification will call");
 			showNotification(ctx, message);
 
 		} else {

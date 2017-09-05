@@ -34,6 +34,7 @@ private:
 	static void init(const v8::FunctionCallbackInfo<v8::Value>&);
 	static void setAppBadge(const v8::FunctionCallbackInfo<v8::Value>&);
 	static void getAppBadge(const v8::FunctionCallbackInfo<v8::Value>&);
+	static void setDebug(const v8::FunctionCallbackInfo<v8::Value>&);
 	static void isRemoteNotificationsEnabled(const v8::FunctionCallbackInfo<v8::Value>&);
 	static void isGooglePlayServicesAvailable(const v8::FunctionCallbackInfo<v8::Value>&);
 	static void unregisterForPushNotifications(const v8::FunctionCallbackInfo<v8::Value>&);

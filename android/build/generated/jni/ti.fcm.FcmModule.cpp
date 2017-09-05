@@ -89,6 +89,7 @@ Local<FunctionTemplate> FcmModule::getProxyTemplate(Isolate* isolate)
 	titanium::SetProtoMethod(isolate, t, "init", FcmModule::init);
 	titanium::SetProtoMethod(isolate, t, "setAppBadge", FcmModule::setAppBadge);
 	titanium::SetProtoMethod(isolate, t, "getAppBadge", FcmModule::getAppBadge);
+	titanium::SetProtoMethod(isolate, t, "setDebug", FcmModule::setDebug);
 	titanium::SetProtoMethod(isolate, t, "isRemoteNotificationsEnabled", FcmModule::isRemoteNotificationsEnabled);
 	titanium::SetProtoMethod(isolate, t, "isGooglePlayServicesAvailable", FcmModule::isGooglePlayServicesAvailable);
 	titanium::SetProtoMethod(isolate, t, "unregisterForPushNotifications", FcmModule::unregisterForPushNotifications);
@@ -463,6 +464,85 @@ void FcmModule::getAppBadge(const FunctionCallbackInfo<Value>& args)
 
 
 	args.GetReturnValue().Set(v8Result);
+
+}
+void FcmModule::setDebug(const FunctionCallbackInfo<Value>& args)
+{
+	LOGD(TAG, "setDebug()");
+	Isolate* isolate = args.GetIsolate();
+	HandleScope scope(isolate);
+
+	JNIEnv *env = titanium::JNIScope::getEnv();
+	if (!env) {
+		titanium::JSException::GetJNIEnvironmentError(isolate);
+		return;
+	}
+	static jmethodID methodID = NULL;
+	if (!methodID) {
+		methodID = env->GetMethodID(FcmModule::javaClass, "setDebug", "(Z)V");
+		if (!methodID) {
+			const char *error = "Couldn't find proxy method 'setDebug' with signature '(Z)V'";
+			LOGE(TAG, error);
+				titanium::JSException::Error(isolate, error);
+				return;
+		}
+	}
+
+	Local<Object> holder = args.Holder();
+	// If holder isn't the JavaObject wrapper we expect, look up the prototype chain
+	if (!JavaObject::isJavaObject(holder)) {
+		holder = holder->FindInstanceInPrototypeChain(getProxyTemplate(isolate));
+	}
+
+	titanium::Proxy* proxy = titanium::Proxy::unwrap(holder);
+
+	if (args.Length() < 1) {
+		char errorStringBuffer[100];
+		sprintf(errorStringBuffer, "setDebug: Invalid number of arguments. Expected 1 but got %d", args.Length());
+		titanium::JSException::Error(isolate, errorStringBuffer);
+		return;
+	}
+
+	jvalue jArguments[1];
+
+
+
+
+	if (!args[0]->IsBoolean() && !args[0]->IsNull()) {
+		const char *error = "Invalid value, expected type Boolean.";
+		LOGE(TAG, error);
+		titanium::JSException::Error(isolate, error);
+		return;
+	}
+	
+
+	if (!args[0]->IsNull()) {
+		Local<Boolean> arg_0 = args[0]->ToBoolean(isolate);
+		jArguments[0].z =
+			titanium::TypeConverter::jsBooleanToJavaBoolean(
+				env, arg_0);
+	} else {
+		jArguments[0].z = NULL;
+	}
+
+	jobject javaProxy = proxy->getJavaObject();
+	env->CallVoidMethodA(javaProxy, methodID, jArguments);
+
+	if (!JavaObject::useGlobalRefs) {
+		env->DeleteLocalRef(javaProxy);
+	}
+
+
+
+	if (env->ExceptionCheck()) {
+		titanium::JSException::fromJavaException(isolate);
+		env->ExceptionClear();
+	}
+
+
+
+
+	args.GetReturnValue().Set(v8::Undefined(isolate));
 
 }
 void FcmModule::isRemoteNotificationsEnabled(const FunctionCallbackInfo<Value>& args)

@@ -60,6 +60,7 @@ public class FcmModule extends KrollModule {
 	public GCMParameters gcmParameters;
 	private static TiApplication app;
 	public KrollDict lastData;
+	private boolean dbg = false;
 
 	@Kroll.constant
 	final static int SERVICE_SUCCESS = ConnectionResult.SUCCESS;
@@ -116,6 +117,16 @@ public class FcmModule extends KrollModule {
 		}
 	}
 
+
+	@Kroll.method
+	public void setDebug(boolean dbg) {
+		this.dbg=dbg;
+	}
+	
+	public static void log(String msg) {
+		Log.d(LCAT, msg);
+	}
+	
 	@Kroll.method
 	public boolean checkPlayServices() {
 		Activity activity = TiApplication.getAppRootOrCurrentActivity();
