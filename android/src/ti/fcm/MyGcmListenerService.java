@@ -27,7 +27,7 @@ import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
-public class IntentService extends GcmListenerService {
+public class MyGcmListenerService extends GcmListenerService {
 	private static final String LCAT = "tigoosh.IntentService";
 	private static final AtomicInteger atomic = new AtomicInteger(0);
 	private FcmModule module = FcmModule.getModule();

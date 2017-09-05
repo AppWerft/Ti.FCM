@@ -1,10 +1,10 @@
 {
-  "id": "52da05cd-3b84-f891-32ec-72c93d8b4a9a",
-  "name": "FCM Downstream for Ti.FCM",
+  "id": "52da05cd-3b84-f891-32ec-72c93d8b4a99",
+  "name": "GCM Downstream for Ti.FCM",
   "values": [
     {
       "key": "URL",
-      "value": "https://fcm.googleapis.com/fcm/send",
+      "value": "https://android.googleapis.com/gcm/send",
       "description": "",
       "type": "text",
       "enabled": true
