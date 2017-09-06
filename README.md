@@ -17,7 +17,7 @@ gittio install ti.fcm
 In your tiapp.xml, insert
 
 ```xml
-<property name="fcm.senderid">YOUR_SENDER_ID</property>
+<property name="FCM_SENDERID">YOUR_SENDER_ID</property>
 ```
 
 To get GCM sender ID:

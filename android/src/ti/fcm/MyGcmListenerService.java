@@ -1,8 +1,10 @@
 package ti.fcm;
-
+// from 
+// https://github.com/googlesamples/google-services/blob/master/android/gcm/app/src/main/java/gcm/play/android/samples/com/gcmquickstart/MyGcmListenerService.java#L43-L69
 import java.io.BufferedInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -27,37 +29,43 @@ import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
-public class ListenerService extends GcmListenerService {
-	private static final String LCAT = "tigoosh.IntentService";
+public class MyGcmListenerService extends GcmListenerService {
 	private static final AtomicInteger atomic = new AtomicInteger(0);
 	private FcmModule module = FcmModule.getModule();
-
+	
+	/**
+     * Called when message is received.
+     *
+     * @param from SenderID of the sender.
+     * @param data Data bundle containing message data as key/value pairs.
+     *             For Set of keys use data.keySet().
+     */
+// [START receive_message]
 	@Override
-	public void onMessageReceived(String from, Bundle data) {
-		for (String key : data.keySet()) {
-			Object value = data.get(key);
-			FcmModule.log(
-					String.format("key: %s => Value: %s (%s)", key,
-							value.toString(), value.getClass().getName()));
+	public void onMessageReceived(String from, Bundle bundle) {
+		FcmModule.log("got notification from "+ from);
+		
+		for (String key : bundle.keySet()) {
+			Object value = bundle.get(key);
+			FcmModule.log(key + " :: " + value.getClass().getName());
 		}
-		 String messageStr = data.getString("message");
-		JSONObject message;
-		try {
-			// AWS:
-			if (data.containsKey("default")) {
-				message = (new JSONObject(data.getString("default")));
-				FcmModule.log( message.toString());
-				GCMQueue db = new GCMQueue();
-				db.insertMessage(data.getString("google.message_id"),
-						data.getLong("google.sent_time"), message);
-				parseNotification(message);
-
-			} else {
+		if (bundle.containsKey("notification")) {
+			Bundle notification= bundle.getBundle("notification");
+			FcmModule.log( notification.toString());
+			JSONObject json = new JSONObject();
+			Set<String> keys = notification.keySet();
+			for (String key : keys) {
+				try {
+					json.put(key, JSONObject.wrap(bundle.get(key)));
+				} catch(JSONException e) {
+		        //Handle exception here
+				}
 			}
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			GCMQueue db = new GCMQueue();
+			db.insertMessage(bundle.getString("google.message_id"),
+					bundle.getLong("google.sent_time"), json);
 		}
+				//parseNotification(message);
 
 	}
 
@@ -92,7 +100,6 @@ public class ListenerService extends GcmListenerService {
 	private void showNotification(Context ctx, JSONObject message) {
 		FcmModule module = FcmModule.getModule();
 		FcmModule.log( "Content of gcm.defaults.json\n===========================");
-		// FcmModule.log(LCAT, module.gcmParameters.toString());
 		String title = "";// module.gcmParameters.getTitle();
 		String alert = "";// module.gcmParameters.getAlert();
 		try {
@@ -102,7 +109,7 @@ public class ListenerService extends GcmListenerService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Log.w(LCAT, "Show Notification: TRUE " + title);
+		FcmModule.log( "Show Notification: TRUE " + title);
 		/* Create intent to (re)start the app's root activity (from gcmpush) */
 		String pkg = ctx.getPackageName();
 		Intent launcherIntent = ctx.getPackageManager()
@@ -174,7 +181,7 @@ public class ListenerService extends GcmListenerService {
 				Bitmap icon = this.getBitmapFromURL(iconName);
 				builder.setLargeIcon(icon);
 			} catch (Exception ex) {
-				Log.e(LCAT, "Icon exception: " + ex.getMessage());
+				FcmModule.log( "Icon exception: " + ex.getMessage());
 			}
 		}
 		// Large image
@@ -206,7 +213,7 @@ public class ListenerService extends GcmListenerService {
 				int color = Color.parseColor(message.getString("color"));
 				builder.setColor(color);
 			} catch (Exception ex) {
-				Log.e(LCAT, "Color exception: " + ex.getMessage());
+				FcmModule.log( "Color exception: " + ex.getMessage());
 			}
 		}
 
@@ -252,7 +259,7 @@ public class ListenerService extends GcmListenerService {
 				Boolean ongoing = message.getBoolean("ongoing");
 				builder.setOngoing(ongoing);
 			} catch (Exception ex) {
-				Log.e(LCAT, "Ongoing exception: " + ex.getMessage());
+				FcmModule.log( "Ongoing exception: " + ex.getMessage());
 			}
 		} else {
 			builder_defaults |= Notification.DEFAULT_LIGHTS;
@@ -262,7 +269,7 @@ public class ListenerService extends GcmListenerService {
 			try {
 				Boolean oaoJson = message.getBoolean("only_alert_once");
 			} catch (Exception ex) {
-				Log.e(LCAT, "Only alert once exception: " + ex.getMessage());
+				FcmModule.log( "Only alert once exception: " + ex.getMessage());
 			}
 		} else {
 			builder_defaults |= Notification.DEFAULT_LIGHTS;
@@ -328,13 +335,11 @@ public class ListenerService extends GcmListenerService {
 			FcmModule.log( " IntentServioce tries to sendback to JS via module");
 			module.sendMessage(message.toString(), isAppInBackground);
 		}
-
 		if (showNotification) {
 			FcmModule.log( "showNotification will call");
 			showNotification(ctx, message);
-
 		} else {
-			Log.w(LCAT, "Show Notification: FALSE");
+			FcmModule.log( "Show Notification: FALSE");
 		}
 	}
 

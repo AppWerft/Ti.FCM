@@ -27,6 +27,7 @@ import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.TiConfig;
 import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.titanium.TiProperties;
 import org.appcelerator.titanium.io.TiFileFactory;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,7 +47,7 @@ import com.google.android.gms.iid.InstanceID;
 @Kroll.module(name = "Fcm", id = "ti.fcm")
 public class FcmModule extends KrollModule {
 
-	public static final String LCAT = "Goosh";
+	public static final String LCAT = "FCMpush";
 	private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
 	public static final String INTENT_EXTRA = "tigoosh.notification";
@@ -154,9 +155,13 @@ public class FcmModule extends KrollModule {
 	}
 
 	@Kroll.method
-	public String getSenderId() {
-		return TiApplication.getInstance().getAppProperties()
-				.getString("fcm.senderid", "");
+	public static String getSenderId() {
+		TiProperties props =TiApplication.getInstance().getAppProperties();
+		if (props.hasProperty("FCM_SENDERID")) {
+			return props.getString("FCM_SENDERID", "");
+		}
+		Log.e(LCAT,"For working with FCM we need the property from tiapp.xml named 'FCM_SENDERID'");
+		return "";
 	}
 
 	@Kroll.method

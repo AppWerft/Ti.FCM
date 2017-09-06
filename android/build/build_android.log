@@ -1,5 +1,5 @@
 
-2017-09-05 09:15:42
+2017-09-06 20:27:15
 
 Operating System
   Name                        = Mac OS X
@@ -1168,5 +1168,5 @@ Compiling all java source files generated
 [DEBUG]  Running AAPT command: /opt/android-sdk/build-tools/23.0.3/aapt package -f -I /opt/android-sdk/platforms/android-23/android.jar -M /Users/fuerst/Documents/MLearning/Ti.FCM/android/build/intermediates/manifests/aapt/AndroidManifest.xml -S /Users/fuerst/Documents/MLearning/Ti.FCM/android/build/intermediates/res/merged -m -J /Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/r --custom-package ti.fcm --non-constant-id -0 apk --output-text-symbols /Users/fuerst/Documents/MLearning/Ti.FCM/android/build/intermediates/bundles --no-version-vectors --extra-packages android.support.v7.appcompat:android.support.v7.cardview:ti.modules.titanium.ui
 [INFO]   Packaging the module
 [INFO]   Creating module zip
-[INFO]   Writing module zip: /Users/fuerst/Documents/MLearning/Ti.FCM/android/dist/ti.fcm-android-0.0.3.zip
-[INFO]   Project built successfully in 11s 383ms
+[INFO]   Writing module zip: /Users/fuerst/Documents/MLearning/Ti.FCM/android/dist/ti.fcm-android-0.0.4.zip
+[INFO]   Project built successfully in 12s 164ms

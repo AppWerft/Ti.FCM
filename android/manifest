@@ -2,13 +2,13 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.0.3
+version: 0.0.4
 apiversion: 3
 architectures: armeabi-v7a x86
 description: FCM
 author: Flavio De Stefano
 license: MIT
-copyright: Copyright (c) 2016 by Caffeina
+copyright: Copyright (c) 2017 by Appwerft
 
 # these should not be edited
 name: fcm
