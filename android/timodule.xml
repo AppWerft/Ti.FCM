@@ -23,29 +23,24 @@
 			<application>
 
 				<meta-data android:name="com.google.android.gms.version" android:value="11020000"/>
-
-			
-				 <receiver 	android:name="com.google.android.gms.gcm.GcmReceiver"
-            				android:exported="true"
-                             android:enabled="true"
+            
+            <receiver android:name="com.google.android.gms.gcm.GcmReceiver"
+            				
             				android:permission="com.google.android.c2dm.permission.SEND" >
             		<intent-filter>
                 		<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                		<!--<category android:name="${tiapp.properties['id']}" />-->
-                       <category android:name="ti.fcm" />
-            		</intent-filter>
-        		</receiver>
-
-				
-				<service
-            		android:name="ti.fcm.MyGcmListenerService"
-            		android:exported="false"
-                     android:enabled="true">
-            		<intent-filter>
-                		<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            		</intent-filter>
-        		</service>
-                
+               		<category android:name="${tiapp.properties['id']}" />
+                    </intent-filter>
+                    <action android:name="com.google.android.c2dm.intent.GCM_RECEIVED_ACTION"/> 
+           </receiver>
+                 
+           <service
+               android:name="ti.fcm.MyGcmListenerService"
+               android:exported="false">
+               <intent-filter>
+                   <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+               </intent-filter>
+           </service>
         		<service
             		android:name="ti.fcm.InstanceIDListenerService"
             		android:exported="false">

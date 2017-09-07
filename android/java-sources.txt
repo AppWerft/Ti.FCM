@@ -23,6 +23,7 @@
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/GCMParameters.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/GCMQueue.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/InstanceIDListener.java"
+"/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/MyBroadcastReceiver.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/MyGcmListenerService.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/PushHandlerActivity.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/RegistrationIntentService.java"

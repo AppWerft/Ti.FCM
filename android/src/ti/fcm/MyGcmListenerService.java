@@ -25,7 +25,6 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
@@ -42,32 +41,27 @@ public class MyGcmListenerService extends GcmListenerService {
      */
 // [START receive_message]
 	@Override
-	public void onMessageReceived(String from, Bundle bundle) {
-		FcmModule.log("got notification from "+ from);
-		FcmModule.log("got this notification "+ bundle.toString());
+	public void onMessageReceived(String from, Bundle data) {
+		FcmModule.log(">>>>>>>>> got notification from "+ from);
 		
-		for (String key : bundle.keySet()) {
-			Object value = bundle.get(key);
+		for (String key : data.keySet()) {
+			Object value = data.get(key);
 			FcmModule.log(key + " :: " + value.getClass().getName());
 		}
 		// this is new
-		if (bundle.containsKey("notification")) {
-			Bundle notification= bundle.getBundle("notification");
-			FcmModule.log( notification.toString());
 			JSONObject json = new JSONObject();
-			Set<String> keys = notification.keySet();
+			Set<String> keys  = data.keySet();
 			for (String key : keys) {
 				try {
-					json.put(key, JSONObject.wrap(bundle.get(key)));
+					json.put(key, JSONObject.wrap(data.get(key)));
 				} catch(JSONException e) {
 		        //Handle exception here
 				}
 			}
 			GCMQueue db = new GCMQueue();
-			db.insertMessage(bundle.getString("google.message_id"),
-					bundle.getLong("google.sent_time"), json);
-		}
-		//parseNotification(message);
+			db.insertMessage(data.getString("google.message_id"),
+					data.getLong("google.sent_time"), json);
+		parseNotification(json);
 
 	}
 
