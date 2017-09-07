@@ -79,6 +79,7 @@ public class FcmModule extends KrollModule {
 	public FcmModule() {
 		super();
 		module = this;
+		Log.d(LCAT+"==========================",this.getClass().getName());
 	}
 
 	@Kroll.onAppCreate
@@ -131,7 +132,7 @@ public class FcmModule extends KrollModule {
 	@Kroll.method
 	public boolean checkPlayServices() {
 		Activity activity = TiApplication.getAppRootOrCurrentActivity();
-
+		
 		GoogleApiAvailability apiAvailability = GoogleApiAvailability
 				.getInstance();
 		int resultCode = apiAvailability
@@ -186,6 +187,7 @@ public class FcmModule extends KrollModule {
 	
 	@Kroll.method
 	public void registerForPushNotifications(KrollDict options) {
+		Log.d(LCAT,this.getClass().getName());
 		if (gcmParameters != null)
 			try {
 				gcmParameters.handleOptions(options);

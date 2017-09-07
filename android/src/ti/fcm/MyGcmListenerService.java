@@ -44,11 +44,13 @@ public class MyGcmListenerService extends GcmListenerService {
 	@Override
 	public void onMessageReceived(String from, Bundle bundle) {
 		FcmModule.log("got notification from "+ from);
+		FcmModule.log("got this notification "+ bundle.toString());
 		
 		for (String key : bundle.keySet()) {
 			Object value = bundle.get(key);
 			FcmModule.log(key + " :: " + value.getClass().getName());
 		}
+		// this is new
 		if (bundle.containsKey("notification")) {
 			Bundle notification= bundle.getBundle("notification");
 			FcmModule.log( notification.toString());
@@ -65,7 +67,7 @@ public class MyGcmListenerService extends GcmListenerService {
 			db.insertMessage(bundle.getString("google.message_id"),
 					bundle.getLong("google.sent_time"), json);
 		}
-				//parseNotification(message);
+		//parseNotification(message);
 
 	}
 

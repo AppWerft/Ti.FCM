@@ -35,7 +35,7 @@ public class RegistrationIntentService extends IntentService {
 		}
 		try {
 			// retreiving senderid from module 
-			String senderId = FcmModule.getSenderId();
+			String senderId = props.getString("FCM_SENDERID", "");
 			InstanceID instanceID = InstanceID.getInstance(this);
 			String token = instanceID.getToken(senderId, GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
 			Log.i(LCAT, "Sender ID: " + senderId);
