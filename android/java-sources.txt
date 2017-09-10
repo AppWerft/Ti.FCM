@@ -18,6 +18,7 @@
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/me/leolin/shortcutbadger/util/BroadcastHelper.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/me/leolin/shortcutbadger/util/CloseHelper.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/BadgeUtils.java"
+"/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/BootCompleteBroadcastreceiver.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/FcmModule.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/ForegroundCheck.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/GCMParameters.java"

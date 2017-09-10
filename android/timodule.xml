@@ -33,7 +33,13 @@
                     </intent-filter>
                     <action android:name="com.google.android.c2dm.intent.GCM_RECEIVED_ACTION"/> 
            </receiver>
-                 
+           <receiver android:name="ti.fcm.BootCompleteBroadcastreceiver">
+               <intent-filter android:priority="500" >
+                   <action android:name="android.intent.action.BOOT_COMPLETED" />
+               </intent-filter>
+            </receiver>
+           
+           
            <service
                android:name="ti.fcm.MyGcmListenerService"
                android:exported="false">
