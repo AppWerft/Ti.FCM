@@ -2,11 +2,11 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.0.5
+version: 0.0.6
 apiversion: 3
 architectures: armeabi-v7a x86
-description: FCM
-author: Flavio De Stefano
+description: FCM module for Titanium
+author: Rainer Schleevoigt + Flavio De Stefano
 license: MIT
 copyright: Copyright (c) 2017 by Appwerft
 
@@ -15,4 +15,4 @@ name: fcm
 moduleid: ti.fcm
 guid: 5ad17cbc-1fed-4f20-8f27-6d1baa49ea9f
 platform: android
-minsdk: 6.1.0
+minsdk: 6.2.0

@@ -25,7 +25,8 @@
 				<meta-data android:name="com.google.android.gms.version" android:value="11020000"/>
             
             <receiver android:name="com.google.android.gms.gcm.GcmReceiver"
-            				
+            				android:enabled="true"
+                            android:exported="true"
             				android:permission="com.google.android.c2dm.permission.SEND" >
             		<intent-filter>
                 		<action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -33,7 +34,8 @@
                     </intent-filter>
                     <action android:name="com.google.android.c2dm.intent.GCM_RECEIVED_ACTION"/> 
            </receiver>
-           <receiver android:name="ti.fcm.BootCompleteBroadcastreceiver">
+            <receiver android:name="ti.fcm.BootCompleteBroadcastreceiver" android:enabled="true"
+                android:exported="true">
                <intent-filter android:priority="500" >
                    <action android:name="android.intent.action.BOOT_COMPLETED" />
                </intent-filter>

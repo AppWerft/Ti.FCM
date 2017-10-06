@@ -9,8 +9,12 @@
 #include "ti.fcm.FcmModule.h"
 
 
+namespace titanium {
+namespace bindings {
 %}
-struct titanium::bindings::BindEntry;
+struct BindEntry;
 %%
 ti.fcm.FcmModule,::ti::fcm::FcmModule::bindProxy,::ti::fcm::FcmModule::dispose
 %%
+}
+}

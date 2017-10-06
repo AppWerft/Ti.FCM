@@ -1,6 +1,6 @@
 /Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/obj/local/x86/objs/ti.fcm/__/FcmBootstrap.o: \
  jni/../FcmBootstrap.cpp \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/v8.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/v8.h \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/stdint.h \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/stdio.h \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/wchar.h \
@@ -32,14 +32,14 @@
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/climits \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/stdexcept \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/__split_buffer \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/v8-version.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/v8config.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/AndroidUtil.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/v8-version.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/v8config.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/AndroidUtil.h \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/stdlib.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/JNIUtil.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/AndroidUtil.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/JSException.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/KrollBindings.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/JNIUtil.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/AndroidUtil.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/JSException.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/KrollBindings.h \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/map \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/__tree \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/functional \
@@ -49,15 +49,15 @@
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/cwctype \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/cctype \
  /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/ctype.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/V8Util.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/V8Util.h \
  jni/../BootstrapJS.cpp jni/../KrollGeneratedBindings.cpp \
  jni/ti.fcm.FcmModule.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/Proxy.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/JavaObject.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/EventEmitter.h \
- /Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/NativeObject.h
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/Proxy.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/JavaObject.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/EventEmitter.h \
+ /Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/NativeObject.h
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/v8.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/v8.h:
 
 /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/stdint.h:
 
@@ -121,21 +121,21 @@
 
 /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/__split_buffer:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/v8-version.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/v8-version.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/v8config.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/v8config.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/AndroidUtil.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/AndroidUtil.h:
 
 /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/stdlib.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/JNIUtil.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/JNIUtil.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/AndroidUtil.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/AndroidUtil.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/JSException.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/JSException.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/KrollBindings.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/KrollBindings.h:
 
 /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/libcxx/include/map:
 
@@ -155,7 +155,7 @@
 
 /Users/fuerst/Library/android-ndk-macosx/sources/cxx-stl/llvm-libc++/../../android/support/include/ctype.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/V8Util.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/V8Util.h:
 
 jni/../BootstrapJS.cpp:
 
@@ -163,10 +163,10 @@ jni/../KrollGeneratedBindings.cpp:
 
 jni/ti.fcm.FcmModule.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/Proxy.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/Proxy.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/JavaObject.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/JavaObject.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/EventEmitter.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/EventEmitter.h:
 
-/Library/Application\ Support/Titanium/mobilesdk/osx/6.1.1.GA/android/native/include/NativeObject.h:
+/Library/Application\ Support/Titanium/mobilesdk/osx/6.2.2.GA/android/native/include/NativeObject.h:

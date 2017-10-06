@@ -53,7 +53,7 @@ static void Fcm_getBinding(const FunctionCallbackInfo<Value>& args)
 	titanium::Utf8Value bindingValue(binding);
 	LOGD(TAG, "Looking up binding: %s", *bindingValue);
 
-	titanium::bindings::BindEntry *extBinding = ::FcmBindings::lookupGeneratedInit(
+	titanium::bindings::BindEntry *extBinding = titanium::bindings::FcmBindings::lookupGeneratedInit(
 		*bindingValue, bindingValue.length());
 
 	if (!extBinding) {
@@ -102,7 +102,7 @@ static void Fcm_dispose(Isolate* isolate)
 		int bindingLength = binding.length();
 
 		titanium::bindings::BindEntry *extBinding =
-			::FcmBindings::lookupGeneratedInit(*binding, bindingLength);
+			titanium::bindings::FcmBindings::lookupGeneratedInit(*binding, bindingLength);
 
 		if (extBinding && extBinding->dispose) {
 			extBinding->dispose(isolate);
@@ -124,5 +124,5 @@ Java_ti_fcm_FcmBootstrap_nativeBootstrap
 	(JNIEnv *env, jobject self)
 {
 	titanium::KrollBindings::addExternalBinding("ti.fcm", &FcmBinding);
-	titanium::KrollBindings::addExternalLookup(&(::FcmBindings::lookupGeneratedInit));
+	titanium::KrollBindings::addExternalLookup(&(titanium::bindings::FcmBindings::lookupGeneratedInit));
 }

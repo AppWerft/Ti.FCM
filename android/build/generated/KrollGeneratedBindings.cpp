@@ -12,8 +12,10 @@
 #include "ti.fcm.FcmModule.h"
 
 
-#line 13 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/KrollGeneratedBindings.gperf"
-struct titanium::bindings::BindEntry;
+namespace titanium {
+namespace bindings {
+#line 15 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/KrollGeneratedBindings.gperf"
+struct BindEntry;
 /* maximum key range = 1, duplicates = 0 */
 
 class FcmBindings
@@ -21,7 +23,7 @@ class FcmBindings
 private:
   static inline unsigned int hash (const char *str, unsigned int len);
 public:
-  static struct titanium::bindings::BindEntry *lookupGeneratedInit (const char *str, unsigned int len);
+  static struct BindEntry *lookupGeneratedInit (const char *str, unsigned int len);
 };
 
 inline /*ARGSUSED*/
@@ -31,7 +33,7 @@ FcmBindings::hash (register const char *str, register unsigned int len)
   return len;
 }
 
-struct titanium::bindings::BindEntry *
+struct BindEntry *
 FcmBindings::lookupGeneratedInit (register const char *str, register unsigned int len)
 {
   enum
@@ -43,11 +45,11 @@ FcmBindings::lookupGeneratedInit (register const char *str, register unsigned in
       MAX_HASH_VALUE = 16
     };
 
-  static struct titanium::bindings::BindEntry wordlist[] =
+  static struct BindEntry wordlist[] =
     {
       {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""},
       {""}, {""}, {""}, {""}, {""}, {""}, {""},
-#line 15 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/KrollGeneratedBindings.gperf"
+#line 17 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/KrollGeneratedBindings.gperf"
       {"ti.fcm.FcmModule",::ti::fcm::FcmModule::bindProxy,::ti::fcm::FcmModule::dispose}
     };
 
@@ -65,5 +67,7 @@ FcmBindings::lookupGeneratedInit (register const char *str, register unsigned in
     }
   return 0;
 }
-#line 16 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/KrollGeneratedBindings.gperf"
+#line 18 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/build/generated/KrollGeneratedBindings.gperf"
 
+}
+}

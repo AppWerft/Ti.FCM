@@ -316,14 +316,14 @@ public class FcmModule extends KrollModule {
 	}
 
 	public void sendMessage(String data, Boolean inBackground) {
-		HashMap<String, Object> e = new HashMap<String, Object>();
+		Log.d(LCAT,"sendMessage in module " + inBackground + "  data="+data);
+		KrollDict e = new KrollDict();
 		e.put("data", data); // to parse on reverse on JS side
-		e.put("inBackground", inBackground);
-		// app.fireAppEvent("gcm",new KrollDict(e));
-		if (messageCallback != null)
+		e.put("inBackground", inBackground.toString());
+		if (messageCallback != null) {
+			Log.d(LCAT,"send by callback");
 			messageCallback.callAsync(getKrollObject(), e);
-		if (hasListeners("onCallback")) {
-			fireEvent("onCallback", e);
-		}
+		}	
+		TiApplication.getInstance().fireAppEvent("fcm", e);
 	}
 }
