@@ -103,12 +103,9 @@ public class FcmModule extends KrollModule {
 			Bundle extras = TiApplication.getAppRootOrCurrentActivity()
 					.getIntent().getExtras();
 			String notification = "";
-
 			if (extras != null) {
 				notification = extras.getString(FcmModule.INTENT_EXTRA);
-
 			}
-
 			if (notification != null) {
 				sendMessage(notification, true);
 			} else {

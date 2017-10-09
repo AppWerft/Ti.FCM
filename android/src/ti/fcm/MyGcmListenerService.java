@@ -58,7 +58,7 @@ public class MyGcmListenerService extends GcmListenerService {
 		}
 
 		if (sendMessage && module != null) {
-			FcmModule.log(" IntentServioce tries to sendback to JS via module");
+			FcmModule.log(" IntentService tries to sendback to JS via module");
 			module.sendMessage(json.toString(), isAppInBackground);
 		}
 		if (showNotification) {
