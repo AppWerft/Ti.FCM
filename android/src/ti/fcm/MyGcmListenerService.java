@@ -36,14 +36,17 @@ public class MyGcmListenerService extends GcmListenerService {
 		}
 		GCMQueue.insertMessage(data.getString("google.message_id"),
 				data.getLong("google.sent_time"), json);
-		Boolean isAppInBackground = !testIfActivityIsTopInList()
+		Boolean isAppInForeground = testIfActivityIsTopInList()
 				.getIsForeground();
-		Boolean sendMessage = !isAppInBackground;
+		Boolean isAppInBackground = !isAppInForeground;
+		
+		Boolean sendMessage = isAppInForeground;
 		Boolean showNotification = isAppInBackground;
-		if (!isAppInBackground) {
+		if (isAppInForeground) {
 			FcmModule
-					.log("!isAppInBackground  => depending on force_show_in_foreground: ");
+					.log("isAppInForeground  => depending on force_show_in_foreground: ");
 			if (json != null && json.has("force_show_in_foreground")) {
+				FcmModule.log("force_show_in_foreground");
 				Boolean forceShowInForeground = false;
 				try {
 					forceShowInForeground = json
