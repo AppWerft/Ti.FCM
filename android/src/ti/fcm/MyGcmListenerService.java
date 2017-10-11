@@ -44,7 +44,7 @@ public class MyGcmListenerService extends GcmListenerService {
 		Boolean showNotification = isAppInBackground;
 		if (isAppInForeground) {
 			FcmModule
-					.log("isAppInForeground  => depending on force_show_in_foreground: ");
+					.log("isAppInForeground  ==> depending on force_show_in_foreground: ");
 			if (json != null && json.has("force_show_in_foreground")) {
 				FcmModule.log("force_show_in_foreground");
 				Boolean forceShowInForeground = false;

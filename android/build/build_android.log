@@ -1,5 +1,5 @@
 
-2017-10-11 12:02:04
+2017-10-11 13:09:35
 
 Operating System
   Name                        = Mac OS X
@@ -998,4 +998,4 @@ Compiling all java source files generated
 [INFO]   Packaging the module
 [INFO]   Creating module zip
 [INFO]   Writing module zip: /Users/fuerst/Documents/MLearning/Ti.FCM/android/dist/ti.fcm-android-0.0.8.zip
-[INFO]   Project built successfully in 11s 349ms
+[INFO]   Project built successfully in 11s 179ms
