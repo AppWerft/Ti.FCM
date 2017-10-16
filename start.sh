@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APPID=ti.fcm
-VERSION=0.0.8
+VERSION=0.0.9
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/"
 

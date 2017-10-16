@@ -28,15 +28,18 @@ public class MyNotification {
 		Context ctx = TiApplication.getInstance().getApplicationContext();
 		FcmModule
 				.log("Content of gcm.defaults.json\n===========================");
-		String title = "";// module.gcmParameters.getTitle();
-		String alert = "";// module.gcmParameters.getAlert();
+		FcmModule.log(message.toString());
+
+		String title = "NO TITLE";
+		String alert = "NO ALERT";
 		try {
-			title = message.getString("title");
-			alert = message.getString("alert");
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			title = message.has("title") ? message.getString("title") : title;
+			alert = message.has("alert") ? message.getString("alert") : alert;
+		} catch (JSONException e1) {
+
+			e1.printStackTrace();
 		}
+
 		FcmModule.log("Show Notification: TRUE " + title);
 		/* Create intent to (re)start the app's root activity (from gcmpush) */
 		String pkg = ctx.getPackageName();
@@ -82,9 +85,10 @@ public class MyNotification {
 
 		}
 
-		// Icons
+		// small icon for status bar or as content of icon if bigicon is missing
 		String smallIconName = "notificationicon";
 		if (message != null && message.has("smallIcon")) {
+			FcmModule.log("message has props 'smallicon'");
 			try {
 				smallIconName = message.getString("smallIcon");
 				int smallIcon = TiRHelper.getApplicationResource("drawable."
@@ -99,6 +103,19 @@ public class MyNotification {
 			} catch (ResourceNotFoundException e) {
 				e.printStackTrace();
 			}
+		} else {
+			FcmModule.log("message has no props 'smallicon', take default");
+			int smallIcon;
+			try {
+				smallIcon = TiRHelper.getApplicationResource("drawable.notificationicon");
+				if (smallIcon > 0) 
+					builder.setSmallIcon(smallIcon);
+			} catch (ResourceNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
 		}
 
 		// Large icon

@@ -16,7 +16,7 @@ import android.os.Bundle;
 import com.google.android.gms.gcm.GcmListenerService;
 
 public class MyGcmListenerService extends GcmListenerService {
-	
+
 	private FcmModule module = FcmModule.getModule();
 
 	@Override
@@ -36,10 +36,9 @@ public class MyGcmListenerService extends GcmListenerService {
 		}
 		GCMQueue.insertMessage(data.getString("google.message_id"),
 				data.getLong("google.sent_time"), json);
-		Boolean isAppInForeground = testIfActivityIsTopInList()
-				.getIsForeground();
+		Boolean isAppInForeground = isInForeground();
 		Boolean isAppInBackground = !isAppInForeground;
-		
+
 		Boolean sendMessage = isAppInForeground;
 		Boolean showNotification = isAppInBackground;
 		if (isAppInForeground) {
@@ -71,21 +70,19 @@ public class MyGcmListenerService extends GcmListenerService {
 			FcmModule.log("Show Notification: FALSE");
 		}
 	}
-
 	
-      static public TaskTestResult testIfActivityIsTopInList() {
+	
+	private boolean isInForeground() {
 		try {
-			TaskTestResult result = new ForegroundCheck().execute(
+			boolean foreground = new ForegroundCheckTask().execute(
 					TiApplication.getInstance().getApplicationContext()).get();
-			return result;
+			return foreground;
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			return null;
+			return false;
 		} catch (ExecutionException e) {
 			e.printStackTrace();
-			return null;
+			return false;
 		}
 	}
-
-	
 }

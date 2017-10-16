@@ -20,7 +20,7 @@
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/BadgeUtils.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/BootCompleteBroadcastreceiver.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/FcmModule.java"
-"/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/ForegroundCheck.java"
+"/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/ForegroundCheckTask.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/GCMParameters.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/GCMQueue.java"
 "/Users/fuerst/Documents/MLearning/Ti.FCM/android/src/ti/fcm/InstanceIDListener.java"
